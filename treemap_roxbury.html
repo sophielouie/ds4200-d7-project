@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-a07f4cf0517958a6670a5ec9147958df"}, "mark": "rect", "encoding": {"color": {"field": "Incident Count", "scale": {"scheme": "blues"}, "type": "quantitative"}, "tooltip": [{"field": "Category", "type": "nominal"}, {"field": "Incident Count", "type": "quantitative"}], "x": {"axis": null, "field": "x", "type": "quantitative"}, "x2": {"field": "x2"}, "y": {"axis": null, "field": "y", "type": "quantitative"}, "y2": {"field": "y2"}}, "height": 1000, "width": 1000, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-a07f4cf0517958a6670a5ec9147958df": [{"Category": "Suspicious Activity", "Incident Count": 1691, "x": 1.0, "y": 1.0, "dx": 366.09815950920245, "dy": 610.6811594202899, "x2": 367.09815950920245, "y2": 611.6811594202899}, {"Category": "Sick Assist", "Incident Count": 1069, "x": 1.0, "y": 613.6811594202899, "dx": 366.09815950920245, "dy": 385.3188405797102, "x2": 367.09815950920245, "y2": 999.0}, {"Category": "Accidental Injury", "Incident Count": 1009, "x": 369.09815950920245, "y": 1.0, "dx": 331.8162078823114, "dy": 401.12368087800763, "x2": 700.9143673915139, "y2": 402.12368087800763}, {"Category": "Larceny", "Incident Count": 901, "x": 702.9143673915139, "y": 1.0, "dx": 296.08563260848615, "dy": 401.12368087800763, "x2": 999.0, "y2": 402.12368087800763}, {"Category": "Hit and Run", "Incident Count": 677, "x": 369.09815950920245, "y": 404.12368087800763, "dx": 282.22176135229654, "dy": 315.67709752011694, "x2": 651.319920861499, "y2": 719.8007783981245}, {"Category": "Assault", "Incident Count": 595, "x": 369.09815950920245, "y": 721.8007783981245, "dx": 282.22176135229654, "dy": 277.19922160187537, "x2": 651.319920861499, "y2": 998.9999999999999}, {"Category": "Vandalism", "Incident Count": 469, "x": 653.319920861499, "y": 404.12368087800763, "dx": 345.680079138501, "dy": 177.9068082700607, "x2": 999.0, "y2": 582.0304891480683}, {"Category": "Misc", "Incident Count": 392, "x": 653.319920861499, "y": 584.0304891480683, "dx": 180.695162228274, "dy": 284.1630681651712, "x2": 834.015083089773, "y2": 868.1935573132396}, {"Category": "Towed Vehicle", "Incident Count": 354, "x": 836.015083089773, "y": 584.0304891480683, "dx": 162.984916910227, "dy": 284.1630681651712, "x2": 999.0, "y2": 868.1935573132396}, {"Category": "Property Loss / Damage", "Incident Count": 341, "x": 653.319920861499, "y": 870.1935573132396, "dx": 345.6800791385014, "dy": 128.80644268676042, "x2": 999.0000000000005, "y2": 999.0}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
